@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Immobilien Auktion Platforom",
+    page_title="Immobilien Auktionsplatforom",
     page_icon=None,
     layout="wide",
 )
