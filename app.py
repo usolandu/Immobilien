@@ -1,11 +1,22 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Immobilien Auktion Platforom",
+    page_icon=None,
+    layout="wide",
+)
+
+# Hide Streamlit's default header (which often includes the page name)
+hide_streamlit_style = """
+    <style>
+    header {visibility: hidden;} /* Hide the entire top header */
+    #MainMenu {visibility: hidden;} /* Hide the hamburger menu if you want */
+    footer {visibility: hidden;}    /* Hide the footer if you want */
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 def main():
-    # Configure the Streamlit page
-    st.set_page_config(
-        page_title="Real Estate Auktion Platform",
-        layout="wide"
-    )
 
     # Sidebar for navigation
     st.sidebar.title("Navigation")
@@ -22,31 +33,31 @@ def main():
 
     # Navigate to the selected page
     if choice == "About us":
-        from pages import About_Us
+        from _pages import About_Us
         About_Us.run()
 
     elif choice == "Prozess":
-        from pages import Prozess
+        from _pages import Prozess
         Prozess.run()
 
     elif choice == "Auktion":
-        from pages import Auktion
+        from _pages import Auktion
         Auktion.run()
 
     elif choice == "Bewertung":
-        from pages import Bewertung
+        from _pages import Bewertung
         Bewertung.run()
 
     elif choice == "Blog":
-        from pages import Blog
+        from _pages import Blog
         Blog.run()
 
     elif choice == "Einstellungen":
-        from pages import Einstellungen
+        from _pages import Einstellungen
         Einstellungen.run()
 
     elif choice == "Hilfe":
-        from pages import Hilfe
+        from _pages import Hilfe
         Hilfe.run()
 
 
